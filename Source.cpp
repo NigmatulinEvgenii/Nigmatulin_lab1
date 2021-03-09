@@ -12,7 +12,7 @@ using namespace std;
 int main()
 {
     cout << "This program will calculate the path S traveled by the train.\n";
-    "a = V/t, S1 = V*t, S2 = pow(a,t)/2, S = S1+S2.\n";
+            "a = V/t, S1 = V*t, S2 = pow(a,t)/2, S = S1+S2.\n";
     double t;
     double V;
 
@@ -22,19 +22,19 @@ int main()
         cin >> V;
         if (cin.fail())
         {
-            cout << "Input error: initial starting speed must be a number.\n";
-            cin.clear();
-            cin.ignore(32767, '\n');
-            fflush(stdin);
-        }
+           cout << "Input error: initial starting speed must be a number.\n";
+           cin.clear();
+           cin.ignore(32767, '\n');
+           fflush(stdin);
+         }
         else
 
-            if (V <= 0)
-            {
-                cout << "Input error: initial driving speed cannot be less than zero or equal to zero.\n";
-                cin.clear();
-                fflush(stdin);
-            }
+          if (V <= 0)
+          {
+              cout << "Input error: initial driving speed cannot be less than zero or equal to zero.\n";
+              cin.clear();
+              fflush(stdin);
+          }
     } while (V <= 0);
 
     do
@@ -43,12 +43,11 @@ int main()
         cin >> t;
         if (cin.fail())
         {
-            cout << "Input error: body ride time should be a number.\n";
-            cin.clear();
-            cin.ignore(32767, '\n');
-            fflush(stdin);
-        }
-        else
+           cout << "Input error: body ride time should be a number.\n";
+           cin.clear();
+           cin.ignore(32767, '\n');
+           fflush(stdin);
+        } else
 
             if (t <= 0)
             {
@@ -62,5 +61,8 @@ int main()
     double S2 = pow(a, t) / 2;
     double S = S1 + S2;
     cout << "The S way is " << S << ".";
+    double S0 = (3 * V * t) / 2;
+    cout << "Formula value 3Vt/2:" << S0;
+    cout << " Formula value Vt+a^2t:" << S;
     return 0;
 }
