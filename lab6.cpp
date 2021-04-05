@@ -1,34 +1,37 @@
-#include <iostream>
 #include <string>
-#include <cstring>
-#include <algorithm>
-
+#include <iostream>
+ 
 using namespace std;
-
-int main()
-{
-    string textInput;
-
-    const char Alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
-
-    cout << "Enter text to encoder: ";
-
-    getline(cin, textInput);
-    int lenght = textInput.length();
-    for (int i = 0; i < lenght; i++)
-        textInput[i] = tolower(textInput[i]);
-
-    for (int i = 0; i < lenght; i++) {
-        int position = 0;
-        for (int j = 0; j < 27; j++) {
-            if (textInput[i] == Alphabet[j]) {
-                position = j + 1;
-                break;
-            }
+ 
+struct obj {
+    string name;
+    int type;
+    obj* point1, * point2;
+    void point() {
+        if (point1 || point2) {
+            if (type == 1)
+                cout << "Name: " << name << " Pointers: " << point1->name << ", " << point2->name << endl;
+            if (type == 2)
+                cout << "Name: " << name << " Pointer: " << point1->name << endl;
         }
-        textInput[i] = Alphabet[26 - position];
+        else
+            cout << "Name: " << name << " Pointer: nothing" << endl;
     }
-
-    cout << "Encoded string: " << textInput << endl;
-    return 0;
+};
+ 
+int main() {
+    obj obj1, obj2, obj3, obj4, obj5, obj6;
+    obj1 = { "1", 1, &obj2, &obj3 };
+    obj2 = { "2", 2, &obj4 };
+    obj3 = { "3", 2, &obj5 };
+    obj4 = { "4", 2, &obj6 };
+    obj5 = { "5", 2, &obj6 };
+    obj6 = { "6", 1 };
+ 
+    obj1.point();
+    obj2.point();
+    obj3.point();
+    obj4.point();
+    obj5.point();
+    obj6.point();
 }
