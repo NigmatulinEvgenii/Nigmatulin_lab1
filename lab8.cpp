@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -28,7 +29,7 @@ public:
     double getAbsb();
     double getPhi();
 private:
-    double absb; // abs - модуль, а в формуле |b| - длинна отрезка.
+    double absb; // abs - Г¬Г®Г¤ГіГ«Гј, Г  Гў ГґГ®Г°Г¬ГіГ«ГҐ |b| - Г¤Г«ГЁГ­Г­Г  Г®ГІГ°ГҐГ§ГЄГ .
     double phi;
 };
 
